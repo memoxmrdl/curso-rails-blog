@@ -1,0 +1,10 @@
+<h3>Comments:</h3>
+<% post.comments.each do |comment| %>
+  <div class="comment-container">
+    <%= image_tag 'profile.png' %>
+    <div>
+      <strong>Anonymous</strong>
+      <p><%= comment.content %></p>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<div class="post-card">
+  <p>
+    <strong>Title:</strong>
+    <%= post.title %>
+  </p>
+  <p>
+    <strong>Content:</strong>
+    <%= post.content %>
+  </p>
+  <span><%= "#{post.comments.size} comments" %></span>
+</div>
+
+<% if local_assigns[:include_form].present? %>
+  <div id="<%= dom_id post %>_comments">
+    <%= render 'comments', post: post %>
+    <%= render 'comments/form', post: post %>
+  </div>
+<% end %>
+
+<p>
+<%= link_to "Show this post", post, class: 'show-link' %>
+</p>
